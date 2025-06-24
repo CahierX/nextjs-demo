@@ -28,7 +28,7 @@ async function SSRUserList() {
       
       {/* 代码展示 */}
       <div className="bg-gray-800 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono">
-        <div className="text-gray-400">// SSR 代码结构</div>
+        <div className="text-gray-400">{'//'} SSR 代码结构</div>
         <div className="text-blue-400">async function</div> SSRUserList() {'{'}
         <br />
         &nbsp;&nbsp;<span className="text-purple-400">const</span> users = <span className="text-blue-400">await</span> fetchUserDataSSR();
@@ -71,7 +71,7 @@ function CodeComparison() {
           📱 CSR 代码结构
         </h3>
         <div className="bg-gray-800 text-red-400 p-4 rounded-lg text-sm font-mono">
-          <div className="text-gray-400">// CSR 需要状态管理</div>
+          <div className="text-gray-400">{'//'} CSR 需要状态管理</div>
           <div className="text-purple-400">const</div> [users, setUsers] = <span className="text-blue-400">useState</span>([]);
           <br />
           <div className="text-purple-400">const</div> [loading, setLoading] = <span className="text-blue-400">useState</span>(<span className="text-yellow-400">true</span>);
@@ -79,7 +79,7 @@ function CodeComparison() {
           
           <div className="text-blue-400">useEffect</div>(() =&gt; {'{'}
           <br />
-          &nbsp;&nbsp;<span className="text-blue-400">fetch</span>('/api/users')
+          &nbsp;&nbsp;<span className="text-blue-400">fetch</span>(&apos;/api/users&apos;)
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-blue-400">then</span>(res =&gt; res.json())
           <br />
@@ -104,7 +104,7 @@ function CodeComparison() {
           🚀 SSR 代码结构
         </h3>
         <div className="bg-gray-800 text-green-400 p-4 rounded-lg text-sm font-mono">
-          <div className="text-gray-400">// SSR 直接获取数据</div>
+          <div className="text-gray-400">{'//'} SSR 直接获取数据</div>
           <div className="text-blue-400">async function</div> ServerComponent() {'{'}
           <br />
           &nbsp;&nbsp;<div className="text-purple-400">const</div> users = <span className="text-blue-400">await</span> <span className="text-blue-400">fetchUsers</span>();
@@ -113,7 +113,7 @@ function CodeComparison() {
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;{'<div>'}
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'{'}users.map(user => ...){'}'} 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'{'}users.map(user =&gt; ...){'}'} 
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;{'</div>'}
           <br />
@@ -257,7 +257,7 @@ export default function CodeDifferencePage() {
                 <li>• 使用 <code className="bg-red-100 dark:bg-red-800 px-1 rounded">useState</code> 管理状态</li>
                 <li>• 使用 <code className="bg-red-100 dark:bg-red-800 px-1 rounded">useEffect</code> 获取数据</li>
                 <li>• 组件多次渲染（loading → loaded）</li>
-                <li>• 需要 <code className="bg-red-100 dark:bg-red-800 px-1 rounded">'use client'</code> 声明</li>
+                <li>• 需要 <code className="bg-red-100 dark:bg-red-800 px-1 rounded">&apos;use client&apos;</code> 声明</li>
               </ul>
             </div>
             <div>
