@@ -5,6 +5,9 @@ import { CSRComponent } from './components/CSRComponent';
 import { SSGComponent } from './components/SSGComponent';
 import { ISRComponent } from './components/ISRComponent';
 
+// 🔥 配置 ISR：60秒重新验证
+export const revalidate = 60;
+
 // 🔥 SSR 数据获取
 async function fetchServerData() {
   const users = await UserService.getAllUsers();
@@ -176,87 +179,6 @@ export default function HybridDemoPage() {
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-
-        {/* 现有路由导航 */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            🔗 现有功能页面
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link
-              href="/dashboard"
-              className="group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-2xl">📊</div>
-                <div className="text-xs bg-white/20 px-2 py-1 rounded">CSR</div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">数据仪表板</h3>
-              <p className="text-sm text-blue-100">客户端渲染的数据统计面板</p>
-            </Link>
-
-            <Link
-              href="/dashboard-ssr"
-              className="group bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-2xl">🚀</div>
-                <div className="text-xs bg-white/20 px-2 py-1 rounded">SSR</div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">SSR 仪表板</h3>
-              <p className="text-sm text-indigo-100">服务端渲染的数据统计面板</p>
-            </Link>
-
-            <Link
-              href="/user-management"
-              className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-2xl">👥</div>
-                <div className="text-xs bg-white/20 px-2 py-1 rounded">CRUD</div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">用户管理</h3>
-              <p className="text-sm text-green-100">完整的用户增删改查功能</p>
-            </Link>
-
-            <Link
-              href="/csr-demo"
-              className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-2xl">🎨</div>
-                <div className="text-xs bg-white/20 px-2 py-1 rounded">CSR</div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">CSR 演示</h3>
-              <p className="text-sm text-orange-100">客户端渲染示例和说明</p>
-            </Link>
-
-            <Link
-              href="/ssr-demo"
-              className="group bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-2xl">⚡</div>
-                <div className="text-xs bg-white/20 px-2 py-1 rounded">SSR</div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">SSR 演示</h3>
-              <p className="text-sm text-purple-100">服务端渲染示例和说明</p>
-            </Link>
-
-            <Link
-              href="/code-difference"
-              className="group bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-2xl">🔄</div>
-                <div className="text-xs bg-white/20 px-2 py-1 rounded">对比</div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">代码对比</h3>
-              <p className="text-sm text-teal-100">不同渲染方式的代码差异</p>
-            </Link>
           </div>
         </div>
       </div>
