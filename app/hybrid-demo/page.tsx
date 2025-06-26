@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
-import Link from 'next/link';
 import { UserService } from '@/lib/userService';
 import { CSRComponent } from './components/CSRComponent';
 import { SSGComponent } from './components/SSGComponent';
 import { ISRComponent } from './components/ISRComponent';
+import DemoHeader from '@/app/components/DemoHeader';
 
 // 🔥 配置 ISR：60秒重新验证
 export const revalidate = 60;
@@ -61,45 +61,12 @@ async function SSRComponent() {
 export default function HybridDemoPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      {/* 顶部导航 */}
-      <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-                🌐 Next.js 渲染模式演示
-              </Link>
-            </div>
-            <div className="flex space-x-4">
-              <Link
-                href="/"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                🏠 首页
-              </Link>
-              <Link
-                href="/code-difference"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                📊 代码对比
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <DemoHeader 
+        title="🌐 Next.js 渲染模式演示" 
+        description="在同一个页面展示 SSR、CSR、SSG、ISR 等不同渲染方式的特点和使用场景"
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* 页面标题 */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            🎯 Next.js 混合渲染模式对比
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            在同一个页面展示 SSR、CSR、SSG、ISR 等不同渲染方式的特点和使用场景
-          </p>
-        </div>
-
-        {/* 渲染方式对比网格 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">{/* 渲染方式对比网格 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* SSR 组件 */}
           <Suspense fallback={

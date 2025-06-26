@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
+import DemoHeader from '@/app/components/DemoHeader';
 
 // 🔥 SSR: 服务器端数据获取函数
 async function fetchUserDataSSR() {
@@ -224,28 +225,12 @@ function ExecutionFlowComparison() {
 export default function CodeDifferencePage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* 导航 */}
-        <div className="mb-8">
-          <Link 
-            href="/"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            ← 返回主页
-          </Link>
-        </div>
-
-        {/* 页面标题 */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            🔥 SSR vs CSR 代码对比
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            通过实际代码和执行流程，理解服务端渲染和客户端渲染的本质区别
-          </p>
-        </div>
-
-        {/* 核心区别总结 */}
+      <DemoHeader 
+        title="🔥 SSR vs CSR 代码对比" 
+        description="通过实际代码和执行流程，理解服务端渲染和客户端渲染的本质区别"
+      />
+      
+      <div className="container mx-auto px-4 py-8">{/* 核心区别总结 */}
         <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-8">
           <h2 className="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4">
             💡 核心区别总结

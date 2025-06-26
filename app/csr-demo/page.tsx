@@ -1,6 +1,7 @@
 'use client'; // 🔥 这个指令让组件在客户端渲染
 
 import { useState, useEffect } from 'react';
+import DemoHeader from '@/app/components/DemoHeader';
 
 // 定义用户数据类型
 interface User {
@@ -70,21 +71,12 @@ export default function CSRDemoPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* 页面标题 */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            CSR 渲染页面示例
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            这是一个客户端渲染 (CSR) 的示例页面，数据在浏览器中获取和渲染。
-          </p>
-          <div className="mt-4 text-sm text-red-500 dark:text-red-400">
-            💡 <strong>试试看：</strong> 右键查看页面源代码，你会发现内容很少！
-          </div>
-        </div>
-
-        {/* 客户端时间显示 */}
+      <DemoHeader 
+        title="CSR 渲染页面示例" 
+        description="这是一个客户端渲染 (CSR) 的示例页面，数据在浏览器中获取和渲染。💡 试试看：右键查看页面源代码，你会发现内容很少！"
+      />
+      
+      <div className="container mx-auto px-4 py-8">{/* 客户端时间显示 */}
         <div className="mb-8">
           <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-lg p-4">
             <div className="flex items-center space-x-2">

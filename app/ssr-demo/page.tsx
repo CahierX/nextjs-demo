@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import DemoHeader from '@/app/components/DemoHeader';
 
 // 定义用户数据类型
 interface User {
@@ -143,17 +144,12 @@ async function ServerTime() {
 export default function SSRDemoPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <DemoHeader 
+        title="SSR 渲染页面示例" 
+        description="这是一个服务端渲染 (SSR) 的示例页面，展示如何在 Next.js App Router 中使用服务器组件来获取数据并渲染页面。"
+      />
+      
       <div className="container mx-auto px-4 py-8">
-        {/* 页面标题 */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            SSR 渲染页面示例
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            这是一个服务端渲染 (SSR) 的示例页面，展示如何在 Next.js App Router 中使用服务器组件来获取数据并渲染页面。
-          </p>
-        </div>
-
         {/* 服务器时间显示 */}
         <div className="mb-8">
           <Suspense fallback={
