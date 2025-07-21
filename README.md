@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+vercel在线体验链接: https://y-umber-psi.vercel.app
 
-## Getting Started
+曾几何时，我对前端领域层出不穷的新技术已经产生了严重的审美疲劳。每当看到Next.js相关的文章，心里总会不以为然地想："这不就是个React+SSR的缝合怪吗？再加点语法糖就敢自称框架了？"在日复一日的业务代码中，我逐渐筑起了一道技术高墙，守着熟悉的技术栈不愿踏出舒适区，甚至对新技术产生了莫名的抵触情绪。
 
-First, run the development server:
+这种技术麻木的状态持续了很久，直到某天收到一封技术分享邀请函——《从路由变革到AI融合：基于Next.js的全栈架构进阶》。抱着"闲着也是闲着"的心态，我点开了分享会议。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+当分享大佬开始层层剖析Next.js的设计哲学时，我仿佛听见认知壁垒碎裂的声音。原来App Router已经实现了如此优雅的约定式路由；原来RSC（服务器组件）让前后端边界可以这样模糊；原来那些我曾嗤之以鼻的"新特性"，早已沉淀成稳定强大的生产力工具。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+在短短一小时的分享中，我经历了从怀疑到震惊，再到自我反思的过山车。突然意识到自己就像井底之蛙，既低估了技术演进的深度，又高估了自己的认知水平。这种"又菜又懒还眼高手低"的顿悟，反而点燃了久违的学习热情。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+分享结束后，我立即打开编辑器，通过Claude生成了涵盖Next.js最新特性的示例代码：从流式渲染到元框架优化，从中间件到ISR增量静态再生。当这些概念真正落地成可运行的代码时，那个曾经对新技术冷嘲热讽的我，终于找回了技术人最宝贵的品质——对未知领域的好奇与敬畏。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+下面是 claude 写的一些 demo 合集和截图，需要的可以自取，感觉现在通过 AI 学习新技术的太方便了，有种邪修的感觉~
 
-## Learn More
+<img width="2650" height="2048" alt="image" src="https://github.com/user-attachments/assets/ddc95396-3437-42e1-a678-667d667328a9" />
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img width="2644" height="1736" alt="image" src="https://github.com/user-attachments/assets/0184e839-1197-4666-b701-5088d24a44a4" />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+<img width="3072" height="2052" alt="image" src="https://github.com/user-attachments/assets/6ef40e49-2624-4827-af56-d37c016aeb0f" />
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
